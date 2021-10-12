@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>fastc-shop-domain</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>fastc-biz-shop-manage</module>
+        <module>fastc-shop-bootstrap</module>
+        <module>fastc-shop-ext-sdk</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.jd.fastbe</groupId>
+        <artifactId>fastbe-biz-template-parent</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+</project>

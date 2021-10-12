@@ -1,0 +1,2 @@
+mvn deploy -pl fastbe-shop-ext-sdk -DskipTests=true -DaltDeploymentRepository=snapshots::default::http://artifactory.jd.com/libs-snapshots-local
+mvn deploy -pl fastbe-biz-shop-manage -DskipTests=true -DaltDeploymentRepository=snapshots::default::http://artifactory.jd.com/libs-snapshots-local

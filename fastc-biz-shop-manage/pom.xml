@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fastbe-parent</artifactId>
+        <groupId>com.jd.fastbe</groupId>
+        <version>0.0.2-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <artifactId>fastc-biz-shop-manage</artifactId>
+
+    <properties>
+        <ext.version>1.0.0-SNAPSHOT</ext.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jd.fastbe</groupId>
+            <artifactId>fastc-shop-ext-sdk</artifactId>
+            <version>${ext.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jd.fastbe</groupId>
+            <artifactId>fastbe-framework-support</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
