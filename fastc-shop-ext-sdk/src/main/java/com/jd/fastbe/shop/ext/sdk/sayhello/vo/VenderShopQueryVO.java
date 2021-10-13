@@ -14,6 +14,7 @@ import java.util.Map;
  *
  */
 @Data
+@Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 public class VenderShopQueryVO extends BaseExtModel {
 
@@ -21,9 +22,4 @@ public class VenderShopQueryVO extends BaseExtModel {
      * 商家id
      */
     private String venderId;
-
-    /**
-     * 数据扩展
-     */
-    private Map<String,String> ext;
 }
