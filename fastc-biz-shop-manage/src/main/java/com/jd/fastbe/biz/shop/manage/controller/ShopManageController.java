@@ -6,11 +6,15 @@ import com.jd.fastbe.biz.shop.manage.core.service.GoodsQueryDomainService;
 import com.jd.fastbe.biz.shop.manage.core.service.ShopManageDomainService;
 import com.jd.fastbe.framework.client.domain.vo.LoginVO;
 import com.jd.fastbe.framework.client.helper.LoginContextHelper;
+import com.jd.fastbe.framework.client.support.factory.DomainParamFactory;
 import com.jd.fastbe.framework.client.support.rest.Result;
 import com.jd.fastbe.framework.model.annotation.FunctionComponent;
 import com.jd.fastbe.framework.model.base.DomainParam;
+import com.jd.fastbe.framework.model.base.PageVO;
 import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderGoodsCategoryVO;
 import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderShopVO;
+import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderSkuQueryVO;
+import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderSkuVO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,5 +61,18 @@ public class ShopManageController {
     public Result<List<VenderGoodsCategoryVO>> getGoodsCategoryList(@RequestBody DomainParam param) {
         List<VenderGoodsCategoryVO> categoryVOS = goodsCategoryQueryDomainService.getList(param);
         return Result.success(categoryVOS);
+    }
+
+    /**
+     * 按照分类分页查询店内商品列表
+     *
+     * @param param 请求信息
+     * @return
+     */
+    @PostMapping("/goods/page")
+    @FunctionComponent(code = "ShopManageController#getGoodsPage", parent = FastcShopManage.CODE)
+    public Result<PageVO<VenderSkuVO>> getGoodsPage(@RequestBody VenderSkuQueryVO param) {
+        PageVO<VenderSkuVO> page = goodsQueryDomainService.getPage(DomainParamFactory.newWithLogin(param));
+        return Result.success(page);
     }
 }

@@ -27,7 +27,7 @@ public class GoodsQueryDomainServiceImpl implements GoodsQueryDomainService {
     private GoodsQueryDomainAbility queryDomainAbility;
 
     @Override
-    public PageVO<VenderSkuVO> getPage(DomainParam<VenderSkuQueryVO> param) throws Exception {
+    public PageVO<VenderSkuVO> getPage(DomainParam<VenderSkuQueryVO> param) {
         DomainResult<PageVO<VenderSkuVO>> result = queryDomainAbility.getPage(param);
         return result.getData();
     }

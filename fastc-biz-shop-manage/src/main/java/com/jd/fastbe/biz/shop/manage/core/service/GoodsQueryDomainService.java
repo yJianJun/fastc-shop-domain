@@ -25,5 +25,5 @@ public interface GoodsQueryDomainService {
      * @return 服务单列表
      */
     @DomainService(parent = FastcShopManage.CODE)
-    PageVO<VenderSkuVO> getPage(DomainParam<VenderSkuQueryVO> param) throws Exception;
+    PageVO<VenderSkuVO> getPage(DomainParam<VenderSkuQueryVO> param);
 }

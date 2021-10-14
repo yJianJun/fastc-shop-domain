@@ -3,6 +3,8 @@ package com.jd.fastbe.biz.shop.manage.core.ability;
 import com.jd.fastbe.biz.shop.manage.FastcShopManage;
 import com.jd.fastbe.biz.shop.manage.core.service.GoodsQueryDomainService;
 import com.jd.fastbe.framework.client.support.domain.BaseDomainAbility;
+import com.jd.fastbe.framework.client.support.exception.BusinessException;
+import com.jd.fastbe.framework.client.support.exception.DefaultErrorCodeEnum;
 import com.jd.fastbe.framework.client.utils.DomainResultUtils;
 import com.jd.fastbe.framework.model.annotation.DomainAbility;
 import com.jd.fastbe.framework.model.base.DomainParam;
@@ -13,6 +15,7 @@ import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderGoodsCategoryVO;
 import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderShopVO;
 import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderSkuQueryVO;
 import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderSkuVO;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 /***
@@ -25,8 +28,13 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class GoodsQueryDomainAbility extends BaseDomainAbility<GoodsQueryExt> {
 
 
-    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param) throws Exception {
-        DomainResult<PageVO<VenderSkuVO>> result = getExt().getPage(param);
+    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param){
+        DomainResult<PageVO<VenderSkuVO>> result = null;
+        try {
+            result = getExt().getPage(param);
+        } catch (Exception e) {
+            throw new BusinessException(DefaultErrorCodeEnum.RPC_INVOKE_ERROR.getCode(),DefaultErrorCodeEnum.RPC_INVOKE_ERROR.getMessage());
+        }
         DomainResultUtils.check(result);
         return result;
     }
