@@ -1,12 +1,9 @@
 package com.jd.fastbe.biz.shop.manage.core.service;
 
 import com.jd.fastbe.biz.shop.manage.FastcShopManage;
-import com.jd.fastbe.framework.client.domain.vo.LoginVO;
 import com.jd.fastbe.framework.model.base.DomainParam;
 import com.jd.fastbe.framework.model.base.DomainService;
-import com.jd.fastbe.framework.model.base.PageVO;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderShopQueryVO;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderShopVO;
+import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderShopVO;
 
 /***
  * @Auther: yejianjun

@@ -1,5 +1,6 @@
 package com.jd.fastbe.biz.shop.manage.core.ability;
 
+import com.google.common.collect.Lists;
 import com.jd.fastbe.biz.shop.manage.FastcShopManage;
 import com.jd.fastbe.framework.client.support.domain.BaseDomainAbility;
 import com.jd.fastbe.framework.client.utils.DomainResultUtils;
@@ -7,9 +8,9 @@ import com.jd.fastbe.framework.model.annotation.DomainAbility;
 import com.jd.fastbe.framework.model.base.DomainParam;
 import com.jd.fastbe.framework.model.base.DomainResult;
 import com.jd.fastbe.shop.ext.sdk.manage.GoodsCategoryQueryExt;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderGoodsCategoryVO;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderShopVO;
+import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderGoodsCategoryVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /***
@@ -31,6 +32,8 @@ public class GoodsCategoryQueryDomainAbility extends BaseDomainAbility<GoodsCate
 
     @Override
     protected GoodsCategoryQueryExt getDefault() {
-        return param -> DomainResult.success(null);
+        return param -> {
+            return DomainResult.success(Lists.newArrayList());
+        };
     }
 }

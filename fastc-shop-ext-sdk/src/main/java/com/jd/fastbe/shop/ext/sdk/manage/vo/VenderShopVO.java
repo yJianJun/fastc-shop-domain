@@ -1,17 +1,15 @@
-package com.jd.fastbe.shop.ext.sdk.sayhello.vo;
+package com.jd.fastbe.shop.ext.sdk.manage.vo;
 
 import com.jd.fastbe.framework.model.base.BaseExtModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.util.Map;
-
 /***
  * @Auther: yejianjun
  * @Date: 2021/10/11
  * @Title:
- *
+ * todo:这个类字段名要修改 与cf文档保持一致
  */
 @Data
 @Accessors(chain = true)

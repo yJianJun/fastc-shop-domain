@@ -1,12 +1,11 @@
 package com.jd.fastbe.biz.shop.manage.core.service.impl;
 
 import com.jd.fastbe.biz.shop.manage.core.ability.GoodsCategoryQueryDomainAbility;
-import com.jd.fastbe.biz.shop.manage.core.ability.ShopManageDomainAbility;
 import com.jd.fastbe.biz.shop.manage.core.service.GoodsCategoryQueryDomainService;
+import com.jd.fastbe.framework.client.utils.DomainResultUtils;
 import com.jd.fastbe.framework.model.base.DomainParam;
 import com.jd.fastbe.framework.model.base.DomainResult;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderGoodsCategoryVO;
-import com.jd.fastbe.shop.ext.sdk.sayhello.vo.VenderShopVO;
+import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderGoodsCategoryVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
