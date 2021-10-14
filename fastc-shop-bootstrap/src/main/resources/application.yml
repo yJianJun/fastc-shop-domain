@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: fastc-shop-domain
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true

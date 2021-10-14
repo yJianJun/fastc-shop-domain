@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 
 import com.jd.fastbe.shop.ext.sdk.sayhello.vo.SayHelloVO;
 import com.jd.fastbe.biz.shop.manage.FastcShopManage;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * Created by SoulW on 2021/7/9.
@@ -22,6 +23,7 @@ import com.jd.fastbe.biz.shop.manage.FastcShopManage;
  * @since 2021/7/9 15:45
  */
 @RestController
+@ApiIgnore
 public class SayHelloController {
 
     @Resource
