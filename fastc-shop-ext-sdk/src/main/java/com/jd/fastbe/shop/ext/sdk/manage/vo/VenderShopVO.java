@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
  * @Auther: yejianjun
  * @Date: 2021/10/11
  * @Title:
- * todo:这个类字段名要修改 与cf文档保持一致
  */
 @Data
 @Accessors(chain = true)
@@ -23,25 +22,14 @@ public class VenderShopVO extends BaseExtModel {
 
     private String shopName;
 
-    private Integer status;
+    private Integer shopStatus;
 
-    private String fullLogoUri;
+    private String logo;
 
-    private Integer shopType;
+    private String contact;
 
-    private String fullLogoUriExt;
+    private String companyName;
 
-    private String csNo;
+    private Integer cooperationStatus;
 
-    private String brief;
-
-    /*
-    店铺企业名称
-     */
-    private String company;
-
-    /**
-     * 店铺合作状态
-     */
-    private Integer cooperation;
 }

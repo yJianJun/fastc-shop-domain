@@ -19,5 +19,5 @@ import com.jd.fastbe.shop.ext.sdk.manage.vo.VenderSkuVO;
 @DomainAbilityExtension(parent = BizComponents.SHOP_MANAGE)
 public interface GoodsQueryExt {
 
-    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param) throws Exception;
+    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param);
 }

@@ -28,13 +28,9 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class GoodsQueryDomainAbility extends BaseDomainAbility<GoodsQueryExt> {
 
 
-    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param){
+    public DomainResult<PageVO<VenderSkuVO>> getPage(DomainParam<VenderSkuQueryVO> param) {
         DomainResult<PageVO<VenderSkuVO>> result = null;
-        try {
-            result = getExt().getPage(param);
-        } catch (Exception e) {
-            throw new BusinessException(DefaultErrorCodeEnum.RPC_INVOKE_ERROR.getCode(),DefaultErrorCodeEnum.RPC_INVOKE_ERROR.getMessage());
-        }
+        result = getExt().getPage(param);
         DomainResultUtils.check(result);
         return result;
     }
