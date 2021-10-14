@@ -16,9 +16,9 @@ import lombok.experimental.Accessors;
 public class VenderShopVO extends BaseExtModel {
 
 
-    private Long shopId;
+    private String shopId;
 
-    private Long venderId;
+    private String venderId;
 
     private String shopName;
 
