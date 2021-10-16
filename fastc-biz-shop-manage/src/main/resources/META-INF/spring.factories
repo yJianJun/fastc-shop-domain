@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.jd.fastbe.biz.shop.manage.FastcShopManage
+  com.jd.fastc.biz.shop.manage.FastcShopManage
