@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -24,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Swagger配置类
  */
 @Configuration
-@EnableSwagger2
+@EnableOpenApi
 public class SwaggerConfig {
 
     @Value("${springfox.documentation.swagger-ui.enabled}")
@@ -34,7 +35,7 @@ public class SwaggerConfig {
     public Docket docket(){
         return new Docket(
                 // 设置使用 OpenApi 3.0 规范
-                DocumentationType.SWAGGER_2)
+                DocumentationType.OAS_30)
                 // 配置项目基本信息
                 .apiInfo(apiInfo())
                 // 设置项目组名
@@ -51,10 +52,10 @@ public class SwaggerConfig {
                 //.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 // 对所有路径进行监控
                 .paths(PathSelectors.any())
-//                // 忽略以"/error"开头的路径,可以防止显示如404错误接口
-//                .paths(PathSelectors.regex("/error.*").negate())
-//                // 忽略以"/actuator"开头的路径
-//                .paths(PathSelectors.regex("/actuator.*").negate())
+                // 忽略以"/error"开头的路径,可以防止显示如404错误接口
+                .paths(PathSelectors.regex("/error.*").negate())
+                // 忽略以"/actuator"开头的路径
+                .paths(PathSelectors.regex("/actuator.*").negate())
                 .build();
     }
 
