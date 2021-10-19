@@ -62,7 +62,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 // 文档标题
-                .title("宜宾B2C-店铺域")
+                .title("宜宾B2B-店铺域")
                 // 设置管理该API人员的联系信息
                 .contact(new Contact("ext.yejianjun1", "http://coding.jd.com/yibin-b2b/fastc-shop-domain/", "ext.yejianjun1@jd.com"))
                 // 文档版本
