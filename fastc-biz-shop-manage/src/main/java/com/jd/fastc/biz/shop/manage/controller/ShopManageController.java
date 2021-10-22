@@ -18,9 +18,9 @@ import com.jd.fastc.shop.ext.sdk.manage.vo.VenderSkuVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,10 +49,10 @@ public class ShopManageController {
      * @param param 请求信息
      * @return
      */
-    @PostMapping("/detail")
+    @PostMapping(value = "/detail",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation("店铺基本信息")
     @FunctionComponent(code = "ShopManageController#detail", parent = FastcShopManage.CODE)
-    public Result<VenderShopVO> detail(@Valid @ApiParam(value = "店铺查询VO", required = true)@RequestBody DomainParam param) {
+    public Result<VenderShopVO> detail(@Valid @ApiParam(value = "店铺查询VO", required = true)DomainParam param) {
         LoginVO loginVO = LoginContextHelper.loadLoginInfo();
         String pin = loginVO.getPin();
         param.setOperator(pin);
@@ -66,10 +66,10 @@ public class ShopManageController {
      * @param param 请求信息  //todo @requestbody去掉
      * @return
      */
-    @PostMapping("/goods/category/list")
+    @PostMapping(value = "/goods/category/list",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation("店内商品分类列表")
     @FunctionComponent(code = "ShopManageController#getGoodsCategoryList", parent = FastcShopManage.CODE)
-    public Result<List<VenderGoodsCategoryVO>> getGoodsCategoryList(@ApiParam(value = "商品分类列表查询VO", required = true)@Valid @RequestBody DomainParam param) {
+    public Result<List<VenderGoodsCategoryVO>> getGoodsCategoryList(@ApiParam(value = "商品分类列表查询VO", required = true)@Valid DomainParam param) {
         List<VenderGoodsCategoryVO> categoryVOS = goodsCategoryQueryDomainService.getList(param);
         return Result.success(categoryVOS);
     }
@@ -80,10 +80,10 @@ public class ShopManageController {
      * @param param 请求信息
      * @return
      */
-    @PostMapping("/goods/page")
+    @PostMapping(value = "/goods/page",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation("店内商品列表")
     @FunctionComponent(code = "ShopManageController#getGoodsPage", parent = FastcShopManage.CODE)
-    public Result<PageVO<VenderSkuVO>> getGoodsPage(@ApiParam(value = "商品列表查询VO", required = true)@RequestBody @Valid VenderSkuQueryVO param) {
+    public Result<PageVO<VenderSkuVO>> getGoodsPage(@ApiParam(value = "商品列表查询VO", required = true) @Valid VenderSkuQueryVO param) {
         PageVO<VenderSkuVO> page = goodsQueryDomainService.getPage(DomainParamFactory.newWithLogin(param));
         return Result.success(page);
     }
