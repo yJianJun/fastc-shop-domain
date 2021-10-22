@@ -6,3 +6,11 @@ springfox:
   documentation:
     swagger-ui:
       enabled: true
+
+logging:
+  config: classpath:logback.xml
+
+fastbe:
+  login:
+    color:
+      exclude: /swagger**/**,/webjars/**,/v3/**,/doc.html

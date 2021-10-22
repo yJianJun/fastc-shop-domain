@@ -63,7 +63,7 @@ public class ShopManageController {
     /**
      * 查询店铺内商品分类
      *
-     * @param param 请求信息  //todo @requestbody去掉
+     * @param param 请求信息
      * @return
      */
     @PostMapping(value = "/goods/category/list",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
