@@ -30,4 +30,7 @@ public class VenderSkuQueryVO extends BasePageRequest {
     @NotBlank(message ="商家id不能为空")
     private String venderId;
 
+    @ApiModelProperty(value = "地址Id", position = 2,allowEmptyValue = true)
+    private Long addressId;
+
 }
