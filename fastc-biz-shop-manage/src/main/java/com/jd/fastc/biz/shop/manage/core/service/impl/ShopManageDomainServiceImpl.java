@@ -21,8 +21,8 @@ public class ShopManageDomainServiceImpl implements ShopManageDomainService {
     private ShopManageDomainAbility shopManageDomainAbility;
 
     @Override
-    public VenderShopVO detail(DomainParam param) {
-        DomainResult<VenderShopVO> domainResult = shopManageDomainAbility.detail(param);
+    public VenderShopVO detail(String venderId,String pin) {
+        DomainResult<VenderShopVO> domainResult = shopManageDomainAbility.detail(venderId,pin);
         return domainResult.getData();
     }
 }

@@ -22,9 +22,9 @@ import java.util.List;
 public class GoodsCategoryQueryDomainAbility extends BaseDomainAbility<GoodsCategoryQueryExt> {
 
 
-    public DomainResult<List<VenderGoodsCategoryVO>> getList(DomainParam param) {
+    public DomainResult<List<VenderGoodsCategoryVO>> getList(String venderId) {
 
-        DomainResult<List<VenderGoodsCategoryVO>> result = getExt().getList(param);
+        DomainResult<List<VenderGoodsCategoryVO>> result = getExt().getList(venderId);
         DomainResultUtils.check(result);
         return result;
     }

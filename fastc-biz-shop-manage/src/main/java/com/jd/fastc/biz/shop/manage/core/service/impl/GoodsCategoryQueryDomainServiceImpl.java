@@ -23,8 +23,8 @@ public class GoodsCategoryQueryDomainServiceImpl implements GoodsCategoryQueryDo
     private GoodsCategoryQueryDomainAbility categoryQueryDomainAbility;
 
     @Override
-    public List<VenderGoodsCategoryVO> getList(DomainParam param) {
-        DomainResult<List<VenderGoodsCategoryVO>> domainResult = categoryQueryDomainAbility.getList(param);
+    public List<VenderGoodsCategoryVO> getList(String venderId) {
+        DomainResult<List<VenderGoodsCategoryVO>> domainResult = categoryQueryDomainAbility.getList(venderId);
         return domainResult.getData();
     }
 }

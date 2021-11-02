@@ -22,11 +22,11 @@ public class ShopManageDomainAbility extends BaseDomainAbility<ShopManagetExt> {
 
     @Override
     protected ShopManagetExt getDefault() {
-        return param -> DomainResult.fail(DefaultErrorCodeEnum.EXT_INVOKE_ERROR.getCode(), DefaultErrorCodeEnum.EXT_INVOKE_ERROR.getMessage());
+        return (venderId,pin) -> DomainResult.fail(DefaultErrorCodeEnum.EXT_INVOKE_ERROR.getCode(), DefaultErrorCodeEnum.EXT_INVOKE_ERROR.getMessage());
     }
 
-    public DomainResult<VenderShopVO> detail(DomainParam param) {
-        DomainResult<VenderShopVO> result = getExt().detail(param);
+    public DomainResult<VenderShopVO> detail(String venderId,String pin) {
+        DomainResult<VenderShopVO> result = getExt().detail(venderId,pin);
         DomainResultUtils.check(result);
         return result;
     }

@@ -22,5 +22,5 @@ public interface GoodsCategoryQueryDomainService {
      * @return 服务单列表
      */
     @DomainService(parent = FastcShopManage.CODE)
-    List<VenderGoodsCategoryVO> getList(DomainParam param);
+    List<VenderGoodsCategoryVO> getList(String venderId);
 }

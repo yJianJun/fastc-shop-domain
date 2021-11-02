@@ -17,5 +17,5 @@ import java.util.List;
 @DomainAbilityExtension(parent = BizComponents.SHOP_MANAGE)
 public interface GoodsCategoryQueryExt {
 
-    DomainResult<List<VenderGoodsCategoryVO>> getList(DomainParam param);
+    DomainResult<List<VenderGoodsCategoryVO>> getList(String venderId);
 }

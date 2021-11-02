@@ -16,10 +16,7 @@ public interface ShopManageDomainService {
 
     /**
      * 查询店铺基本信息
-     *
-     * @param param 入参
-     * @return 服务单列表
      */
     @DomainService(parent = FastcShopManage.CODE)
-    VenderShopVO detail(DomainParam param);
+    VenderShopVO detail(String venderId,String pin);
 }

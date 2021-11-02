@@ -15,5 +15,5 @@ import com.jd.fastc.shop.ext.sdk.manage.vo.VenderShopVO;
 @DomainAbilityExtension(parent = BizComponents.SHOP_MANAGE)
 public interface ShopManagetExt {
 
-    DomainResult<VenderShopVO> detail(DomainParam param);
+    DomainResult<VenderShopVO> detail(String venderId,String pin);
 }
