@@ -75,7 +75,7 @@ public class ShopManageController {
     }
 
     /**
-     * 查询店铺内商品分类
+     * 查询店铺内商品分类列表
      *
      * @return
      */
