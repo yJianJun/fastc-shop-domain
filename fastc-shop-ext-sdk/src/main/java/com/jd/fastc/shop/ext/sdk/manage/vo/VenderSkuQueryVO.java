@@ -22,8 +22,7 @@ import javax.validation.constraints.NotBlank;
 @ApiModel(description = "商品列表查询VO")
 public class VenderSkuQueryVO extends BasePageRequest {
 
-    @ApiModelProperty(value = "商品分类id", position = 0,required = true)
-    @NotBlank(message = "商品分类id不能为空")
+    @ApiModelProperty(value = "商品分类id", position = 0,allowEmptyValue = true)
     private String category;
 
     @ApiModelProperty(value = "商家id", position = 1,required = true)
