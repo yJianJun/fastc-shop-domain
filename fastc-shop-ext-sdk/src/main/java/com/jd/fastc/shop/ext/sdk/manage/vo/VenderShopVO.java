@@ -42,4 +42,7 @@ public class VenderShopVO extends BaseExtModel {
     @ApiModelProperty(value = "合作状态：1-待审，2-通过，3-否决",position = 7,allowableValues = "1,2,3")
     private Integer cooperationStatus;
 
+    @ApiModelProperty(value = "授权关系id",position = 8)
+    private Long relId;
+
 }
