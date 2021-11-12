@@ -18,6 +18,9 @@ public enum ConstantCode {
      */
     IN_Stock(1),
 
+    //未合作
+    Not_Cooperating(5),
+
     NO_Stock(0);
 
     private Integer code;
